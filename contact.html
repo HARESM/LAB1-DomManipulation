@@ -14,7 +14,8 @@ Description: multi page form displaying knowledge of all material covered so far
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AboutUs Page</title>
+  <!-- <meta http-equiv="refresh" content="3, index.html"> -->
+  <title>Contact Page</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
     crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="./css/webd2201.css" />
@@ -41,35 +42,72 @@ Description: multi page form displaying knowledge of all material covered so far
                 <a class="nav-link" href="./services.html"><i class="fa-solid fa-users"></i> Services</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" href="about.html"><i class="fa-solid fa-handshake"></i>About us</a>
+                <a class="nav-link " href="about.html"><i class="fa-solid fa-handshake"></i>About us</a>
               </li>
               <li class="nav-item" id = "HR">
               
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="contact.html"><i class="fa-solid fa-phone"></i>Contact Us</a>
+                <a class="nav-link active" href="contact.html"><i class="fa-solid fa-phone"></i>Contact Us</a>
               </li>
             </ul>
           </div>
         </div>
       </nav>
       <div class="container">
-
-        <!--The pages header-->
         <header class="mt-5">
-          <h1 id="welcome" style="color:crimson"><i class="fa-solid fa-handshake" ></i>About Us</h1>
+          <!--The pages header-->
+          <h1 id="welcome" style="color:crimson"><i class="fa-solid fa-phone" ></i>Contact Us</h1>
 
           <p id="Desc1a"  style="color: white" style="font-size: 50px" > </p>
           <p id="aboutcontact" style="color: white" ></p>
           <br>
           <p id="aboutresume1" style="color: white"></p>
-          <img src="img/programmingimg.png" width="500" alt="">
+          <img src="img/contact-us.png" width="500" alt="">
          
         </header>
+        <main>
+            <!-- add in all labels and buttons for each feild -->
+            <form action="index.html" method="get" id="myForm" name="myForm" onsubmit="return validateForm()">
+              <div class="mb-3">
+                <label for="username" class="form-label" style="color:crimson">Username</label>
+                <input type="text" class="form-control" id="username" name="username" placeholder="e.g. blabla123">
+              </div>
+              <div class="mb-3">
+                <label for="emailAddress" class="form-label" style="color:crimson">Email</label>
+                <input type="email" class="form-control" id="emailAddress" name="emailAddress" placeholder="example@eg.ca">
+              </div>
+              <div class="mb-3">
+                <label for="phoneNumber" class="form-label" style="color:crimson">Phone Number</label>
+                <input type="number" class="form-control" id="phoneNumber" name="phoneNumber" placeholder="(999)-999-9999">
+              </div>
+              <div class="mb-3">
+                <label for="message" class="form-label" style="color:crimson">Optional Message</label>
+                <input type="text" class="form-control" id="message" name="message" placeholder="'Hello'">
+              </div>
+              <!--added in onclick to make sure redirect worked after 3 seconds -->
+              <button onclick="submitFormWithDelay()" type="submit" class="btn btn-danger" id="submitbutton">Submit</button>
+              <!--USED CHAT GPT FOR THIS FUNCTION(AI THAT GAVE US ANSWER)-->
+              <script>
+                
+                 function submitFormWithDelay() {
+              setTimeout(function () {
+              document.forms[0].submit();
+               }, 3000);
+                }
+              </script>
+            </form>
+        </main>
+        <!-- empty lines to create space between submit button and bottom nav bar -->
+        <p>....................................................</p>
+        <p>....................................................</p>
+        <p>....................................................</p>
+
+
       </div>
-      <!-- fixed nav bar for bottom 
+      <!-- fixed nav bar for bottom  
       https://getbootstrap.com/docs/5.1/components/navbar/-->
-      <nav class="navbar fixed-bottom navbar-light bg-light">
+      <nav class="navbar fixed-bottom navbar-light bg-light" >
         <div class="container-fluid">
           <a class="navbar-brand" href="#">© CopyRight 2023</a>
         </div>
@@ -77,6 +115,7 @@ Description: multi page form displaying knowledge of all material covered so far
     
     
 </body>
-<script src="scripts\about.js"></script>
+<!-- insert in link for js scripts -->
+<script src="scripts\contact.js"></script>
 
 </html>
